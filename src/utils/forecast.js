@@ -10,7 +10,9 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.cod != 200) {
             callback(body.message, undefined)
         } else {
-            callback(undefined, `It's ${body.weather[0].description}. It is currently ${parseInt(body.main.temp) - 273} degrees out.`)
+            callback(undefined, `It's ${body.weather[0].description}. 
+                It is currently ${parseInt(body.main.temp) - 273} degrees out.
+                The min temperature is ${body.main.temp_min} and the max is ${body.main.temp_max}`)
         }
     })
 }
