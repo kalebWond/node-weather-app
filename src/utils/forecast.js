@@ -12,7 +12,7 @@ const forecast = (latitude, longitude, callback) => {
         } else {
             callback(undefined, `It's ${body.weather[0].description}. 
                 It is currently ${parseInt(body.main.temp) - 273} degrees out.
-                The min temperature is ${body.main.temp_min} and the max is ${body.main.temp_max}`)
+                The low temperature is ${parseInt(body.main.temp_min) - 273} and the high is ${parseInt(body.main.temp_max) - 273}`)
         }
     })
 }
